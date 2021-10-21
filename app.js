@@ -3,6 +3,11 @@ const app = express();
 const path = require('path');
 const request = require('request');
 
+const mongoose = require('mongoose')
+mongoose.connect("mongodb+srv://kmdb10:ly1U83fjJN6HWJ2D@kmdb.ovwa3.mongodb.net/kmdb10", { useNewUrlParser: true }, { useUnifiedTopology: true })
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log('Connected to Mongoose'))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,7 +30,7 @@ app.get('/results', (req, res)=> {
 
 });
 
-app.get('/search', (req,res)=> {
+app.get('/', (req,res)=> {
     res.render('search');
 });
 
