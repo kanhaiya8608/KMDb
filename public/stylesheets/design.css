@@ -19,10 +19,9 @@ body{
 
 #heading{
     margin-top: 6rem;
-    font-size: 100;
     font-weight: 700;
     color: rgb(216, 0, 0);
-
+    font-size: 100px;
 }
 #heading span{
     color: black;
